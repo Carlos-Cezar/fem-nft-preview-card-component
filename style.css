@@ -1,0 +1,279 @@
+/* RESET */
+
+:root {
+  --ff: "Open Sans", sans-serif;
+
+  --fs: 1.125rem;
+
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-600: 600;
+
+  --Soft-blue: hsl(215, 51%, 70%);
+  --Cyan: hsl(178, 100%, 50%);
+  --Very-dark-blue-bg: hsl(217, 54%, 11%);
+  --Very-dark-blue-card: hsl(216, 50%, 16%);
+  --Very-dark-blue-line: hsl(215, 32%, 27%);
+  --White: hsl(0, 0%, 100%);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* START CODING */
+
+body {
+  background-color: var(--Very-dark-blue-bg);
+  font-family: var(--ff);
+  font-size: var(--fs);
+  font-weight: var(--fw-300);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--Very-dark-blue-card);
+  margin: 1.5rem;
+  border-radius: 20px;
+  max-width: 21rem;
+  padding: 0 1.3rem;
+}
+
+.card__hero--img {
+  margin-top: 1.3rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+.card__hero--img img {
+  border-radius: 10px;
+}
+
+.card__hero--img a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.view {
+  opacity: 0;
+}
+
+.overlay {
+  position: absolute;
+  opacity: 0;
+  background-color: var(--Cyan);
+  width: 100%;
+  height: 100%;
+  transition: 0.5s ease;
+  border-radius: 10px;
+}
+
+.overlay a {
+  background-color: var(--Cyan);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.card__hero--img:hover .overlay {
+  transition: 0.5s ease;
+  opacity: 0.5;
+}
+
+.card__hero--img:hover .view {
+  transition: 0.6s ease;
+  opacity: 1;
+}
+
+.card__hero--title {
+  margin: 1rem 0;
+}
+
+.card__hero a {
+  font-size: 1.4rem;
+  font-weight: var(--fw-600);
+  color: var(--White);
+  text-decoration: none;
+}
+
+.card__hero a:hover {
+  color: var(--Cyan);
+}
+
+.card__hero p {
+  font-size: 0.9rem;
+  color: var(--Soft-blue);
+}
+
+.card__price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.card__price h2 {
+  color: var(--Cyan);
+}
+
+.card__price--price {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  align-items: center;
+}
+
+.card__price--price img {
+  width: 0.6875rem;
+  height: 1.125rem;
+}
+
+.card__price--time {
+  gap: 0.5rem;
+  display: flex;
+}
+
+.card__price--time img {
+  aspect-ratio: 1 / 1;
+  width: 1.25rem;
+}
+
+.card__price--time p {
+  font-weight: var(--fw-400);
+}
+
+.card__line {
+  width: 100%;
+  height: 0.1rem;
+  background-color: var(--Very-dark-blue-line);
+}
+
+.card__creator {
+  display: flex;
+  flex-direction: row;
+  color: var(--Soft-blue);
+  align-items: center;
+  gap: 0.9rem;
+  margin: 1rem 0;
+  align-self: start;
+  font-size: 1rem;
+}
+
+.card__creator img {
+  width: 2rem;
+  border: 1px solid var(--White);
+  border-radius: 50%;
+}
+
+.card__creator a {
+  text-decoration: none;
+  color: var(--White);
+}
+
+.card__creator a:hover {
+  color: var(--Cyan);
+}
+
+/* FOOTER */
+
+footer {
+  margin-top: 2rem;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: var(--Soft-blue);
+  bottom: 0;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
