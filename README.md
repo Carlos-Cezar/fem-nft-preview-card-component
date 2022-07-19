@@ -45,7 +45,7 @@ Users should be able to:
 
 ### Useful resources
 
-- [MDN Web Docs](https://developer.mozilla.org/en-US/) - This helped get answers for the questions i had.
+- [MDN Web Docs](https://developer.mozilla.org/en-US/) - This helped me get answers for the questions i had.
 
 ## Author
 
